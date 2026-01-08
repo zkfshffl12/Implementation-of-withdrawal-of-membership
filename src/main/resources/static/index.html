@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전국 소주 관리 시스템</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2>소주 정보 등록</h2>
+    <div class="input-group">
+        <input type="text" id="name" placeholder="소주 이름">
+        <input type="number" id="alcoholContent" placeholder="알코올 도수 (%)">
+        <input type="text" id="origin" placeholder="원산지">
+        <button onclick="addSoju()">등록</button>
+    </div>
+
+    <h2>소주 목록</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>알코올 도수</th>
+                <th>원산지</th>
+            </tr>
+        </thead>
+        <tbody id="soju-list"></tbody>
+    </table>
+    <script src="/js/app.js"></script>
+</body>
+</html>
