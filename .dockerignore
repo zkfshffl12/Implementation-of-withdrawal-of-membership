@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Build outputs
+soju/build/
+soju/frontend/node_modules/
+soju/frontend/dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test
+soju/src/test/
