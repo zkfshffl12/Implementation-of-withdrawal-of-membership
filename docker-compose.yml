@@ -8,6 +8,7 @@ services:
     container_name: soju-app
     ports:
       - "8080:8080"
+      - "5173:5173"
     environment:
       # Spring 프로필
       SPRING_PROFILES_ACTIVE: prod
@@ -15,20 +16,13 @@ services:
       # 서버 설정
       SERVER_PORT: 8080
       
-      # 데이터베이스 설정 (Oracle)
-      DB_HOST: oracle-db
-      DB_PORT: 1521
-      DB_NAME: ORCL
-      DB_USERNAME: soju
-      DB_PASSWORD: your_secure_password
+      # 데이터베이스 설정 (로컬 Oracle 사용)
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@host.docker.internal:1521:xe
+      SPRING_DATASOURCE_USERNAME: BASAN
+      SPRING_DATASOURCE_PASSWORD: oracle
       
       # JVM 옵션
       JAVA_OPTS: "-Xmx1g -Xms512m -XX:+UseG1GC"
-      
-      # 추가 Spring Boot 설정 (필요시)
-      # SPRING_DATASOURCE_URL: jdbc:oracle:thin:@oracle-db:1521:ORCL
-      # SPRING_DATASOURCE_USERNAME: soju
-      # SPRING_DATASOURCE_PASSWORD: your_secure_password
     
     # 의존성 (Oracle DB 서비스가 있는 경우)
     # depends_on:

@@ -16,7 +16,7 @@ COPY soju/frontend/ ./
 RUN npm run build
 
 # 백엔드 빌드 스테이지
-FROM gradle:8.5-jdk17 AS backend-builder
+FROM gradle:8.14-jdk17 AS backend-builder
 
 WORKDIR /app
 
